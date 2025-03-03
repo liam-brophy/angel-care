@@ -1,0 +1,62 @@
+.status-bars {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    margin-bottom: 15px;
+  }
+  
+  .status-bar-container {
+    width: 100%;
+  }
+  
+  .status-bar-label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  .status-bar-background {
+    width: 100%;
+    height: 25px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .status-bar-fill {
+    height: 100%;
+    transition: width 0.3s ease;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  
+  /* Ensure layout works at all screen sizes */
+  @media (min-width: 768px) {
+    .game-container {
+      display: flex;
+      flex-direction: column;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .game-controls {
+      display: flex;
+      gap: 20px;
+    }
+    
+    .status-bars {
+      flex: 1;
+    }
+    
+    .pet-controls {
+      flex: 1;
+    }
+  }

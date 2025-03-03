@@ -134,50 +134,68 @@ body {
   opacity: 0.7;
 }
 
-/* Status Bars */
 .status-bars {
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   margin-right: 10px;
+  padding: 10px;
 }
 
-.status-bar {
-  height: 30px; /* Increased from 20% */
-  position: relative;
-  margin: 8px 0; /* Increased from 5px */
+.status-bar-container {
+  margin-bottom: 15px;
 }
 
-/* Add labels for status bars */
-.status-bar::before {
-  content: attr(data-label);
-  position: absolute;
-  left: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 1;
+.status-bar-label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
   font-weight: bold;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
 
-.status-fill, .status-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  border-radius: 5px;
-}
-
-.status-background {
+.status-bar-background {
   width: 100%;
+  height: 25px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
 }
 
-.status-fill {
+.status-bar-fill {
+  height: 100%;
   transition: width 0.3s ease;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 
-/* Health bar */
+/* Status color classes (assuming these are returned by getStatusColor) */
+.status-good {
+  background-color: #4CAF50; /* Green */
+}
+
+.status-warning {
+  background-color: #FFC107; /* Yellow */
+}
+
+.status-danger {
+  background-color: #F44336; /* Red */
+}
+
+/* Make status bars visible at all screen sizes */
+@media (max-width: 768px) {
+  .status-bars {
+    margin-bottom: 15px;
+  }
+  
+  .status-bar-background {
+    height: 20px;
+  }
+}
+/* 
+
 .health-fill {
   background-color: var(--health-color-primary);
 }
@@ -186,7 +204,7 @@ body {
   background-color: var(--health-color-secondary);
 }
 
-/* Energy bar */
+
 .energy-fill {
   background-color: var(--energy-color-primary);
 }
@@ -195,7 +213,7 @@ body {
   background-color: var(--energy-color-secondary);
 }
 
-/* Happiness bar */
+
 .happiness-fill {
   background-color: var(--happiness-color-primary);
 }
@@ -204,14 +222,14 @@ body {
   background-color: var(--happiness-color-secondary);
 }
 
-/* Hunger bar */
+
 .hunger-fill {
   background-color: var(--hunger-color-primary);
 }
 
 .hunger-background {
   background-color: var(--hunger-color-secondary);
-}
+} */
 
 /* Action Buttons */
 .action-buttons {
